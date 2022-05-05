@@ -3,7 +3,9 @@ Mini Flask API main file
 """
 
 import json
+from dotenv import load_dotenv
 from flask import Flask, Response
+from src.models import User
 
 
 def create_app():
@@ -24,12 +26,9 @@ def create_app():
 
     @app.get('/api/v1.0/second')
     def second_get():
-        data = {
-            'name': 'Peter',
-            'age': 56
-        }
+        users = [user.to_dict() for user in User.all()]
 
-        return Response(json.dumps(data), 200, content_type='application/json')
+        return Response(json.dumps(users), 200, content_type='application/json')
 
     @app.get('/api/v1.0/third')
     def third_get():
