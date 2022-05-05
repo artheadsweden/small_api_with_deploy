@@ -5,7 +5,7 @@ Mini Flask API main file
 import json
 from dotenv import load_dotenv
 from flask import Flask, Response
-from models import User
+from .models import User
 
 
 def create_app():
