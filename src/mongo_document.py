@@ -4,7 +4,7 @@ from abc import ABC
 from dotenv import load_dotenv
 from pymongo import MongoClient
 
-
+# Loading the connection string from env
 load_dotenv()
 M_URI = os.environ.get('M_URI')
 # DB_USER = os.environ.get('DB_USER')
